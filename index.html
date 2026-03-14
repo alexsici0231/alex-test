@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calvin Dalli — Digital Marketing Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">Calvin</span>
+        <span class="logo-accent">Dalli</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services" class="nav-link">Услуги</a></li>
+        <li><a href="#about" class="nav-link">О нас</a></li>
+        <li><a href="#cases" class="nav-link">Кейсы</a></li>
+        <li><a href="#pricing" class="nav-link">Цены</a></li>
+        <li><a href="#contact" class="nav-link">Контакты</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Начать проект</a>
+      <button class="burger" id="burger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" class="mobile-link">Услуги</a></li>
+      <li><a href="#about" class="mobile-link">О нас</a></li>
+      <li><a href="#cases" class="mobile-link">Кейсы</a></li>
+      <li><a href="#pricing" class="mobile-link">Цены</a></li>
+      <li><a href="#contact" class="mobile-link">Контакты</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Digital Marketing Agency — Кишинёв
+      </div>
+      <h1 class="hero-title reveal">
+        <span class="line">Мы превращаем</span>
+        <span class="line gradient-text">клики в клиентов</span>
+        <span class="line">и бюджеты в прибыль</span>
+      </h1>
+      <p class="hero-desc reveal">
+        Meta Ads · Google Ads · SMM · CGI — полный спектр digital-маркетинга для вашего бизнеса.
+        Работаем на результат, а не на обещания.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#contact" class="btn-primary">
+          <span>Получить консультацию</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#cases" class="btn-secondary">Смотреть кейсы</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-num" data-count="200">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Клиентов</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="700">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Проектов</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="7500">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Рилсов</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Лет опыта</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Meta Ads</span><span class="dot">●</span>
+        <span>Google Ads</span><span class="dot">●</span>
+        <span>SMM</span><span class="dot">●</span>
+        <span>CGI</span><span class="dot">●</span>
+        <span>Reels Production</span><span class="dot">●</span>
+        <span>Targeting</span><span class="dot">●</span>
+        <span>Content Creation</span><span class="dot">●</span>
+        <span>Brand Strategy</span><span class="dot">●</span>
+        <span>Meta Ads</span><span class="dot">●</span>
+        <span>Google Ads</span><span class="dot">●</span>
+        <span>SMM</span><span class="dot">●</span>
+        <span>CGI</span><span class="dot">●</span>
+        <span>Reels Production</span><span class="dot">●</span>
+        <span>Targeting</span><span class="dot">●</span>
+        <span>Content Creation</span><span class="dot">●</span>
+        <span>Brand Strategy</span><span class="dot">●</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal">Наши услуги</span>
+        <h2 class="section-title reveal">Полный спектр<br /><span class="gradient-text">digital-маркетинга</span></h2>
+        <p class="section-desc reveal">
+          Мы не просто запускаем рекламу — мы строим системы привлечения клиентов,
+          которые работают 24/7 и приносят измеримый результат.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Meta Ads -->
+        <div class="service-card reveal" data-index="0">
+          <div class="card-glow"></div>
+          <div class="card-number">01</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M8 16C8 11.582 11.582 8 16 8h16c4.418 0 8 3.582 8 8v16c0 4.418-3.582 8-8 8H16c-4.418 0-8-3.582-8-8V16z" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+              <circle cx="32" cy="16" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Meta Ads</h3>
+          <p class="card-desc">Таргетированная реклама в Facebook и Instagram. Настраиваем кампании с точным попаданием в вашу аудиторию и максимальным ROAS.</p>
+          <ul class="card-features">
+            <li>Аудитории Lookalike</li>
+            <li>Ретаргетинг и воронки</li>
+            <li>A/B тестирование креативов</li>
+            <li>Оптимизация конверсий</li>
+          </ul>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- Google Ads -->
+        <div class="service-card reveal" data-index="1">
+          <div class="card-glow"></div>
+          <div class="card-number">02</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 10v14l9 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M30 24h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Google Ads</h3>
+          <p class="card-desc">Поисковая, медийная и видео реклама в Google. Захватываем аудиторию в момент максимального интереса к вашему продукту.</p>
+          <ul class="card-features">
+            <li>Search & Display кампании</li>
+            <li>YouTube реклама</li>
+            <li>Performance Max</li>
+            <li>Shopping кампании</li>
+          </ul>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- SMM -->
+        <div class="service-card reveal" data-index="2">
+          <div class="card-glow"></div>
+          <div class="card-number">03</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M16 24c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8-8-3.582-8-8z" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 32l8-8M32 16l8-8M8 16l8 8M32 32l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card-title">SMM</h3>
+          <p class="card-desc">Полное ведение социальных сетей: создание контента, разработка стратегии и построение живого сообщества вокруг вашего бренда.</p>
+          <ul class="card-features">
+            <li>Контент-стратегия</li>
+            <li>Дизайн & сценарии</li>
+            <li>Сторисы и Reels</li>
+            <li>Комьюнити-менеджмент</li>
+          </ul>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <!-- CGI -->
+        <div class="service-card reveal service-card--wide" data-index="3">
+          <div class="card-glow"></div>
+          <div class="card-number">04</div>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M6 36L18 14l8 14 6-8 10 16H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="38" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="card-title">CGI & Визуализация</h3>
+          <p class="card-desc">Компьютерная графика и 3D-визуализация для ваших рекламных кампаний. Создаём WOW-эффект который невозможно снять обычной камерой. Ваш продукт в невозможных сценах — это то, что запоминается.</p>
+          <ul class="card-features">
+            <li>3D product visualization</li>
+            <li>CGI-ролики для рекламы</li>
+            <li>Анимация бренда</li>
+            <li>Виральный контент</li>
+          </ul>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHO IS CALVIN -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-left">
+          <span class="section-tag reveal">О Calvin Dalli</span>
+          <h2 class="section-title reveal">SMM-менеджер<br /><span class="gradient-text">нового поколения</span></h2>
+          <p class="about-text reveal">
+            Calvin Dalli — это digital-агентство нового формата. Мы не просто специалисты по рекламе,
+            мы — стратеги вашего роста. Работаем с бизнесами от малого до крупного,
+            строим системы привлечения клиентов, которые масштабируются.
+          </p>
+          <p class="about-text reveal">
+            Наш подход: анализ → стратегия → реализация → оптимизация → рост.
+            Мы не берём оплату за воздух — только за конкретные результаты.
+          </p>
+          <div class="about-tags reveal">
+            <span class="tag">Instagram</span>
+            <span class="tag">Facebook</span>
+            <span class="tag">TikTok</span>
+            <span class="tag">YouTube</span>
+            <span class="tag">Google</span>
+            <span class="tag">Telegram</span>
+          </div>
+          <div class="about-process reveal">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-info">
+                <h4>Аудит и анализ</h4>
+                <p>Изучаем ваш бизнес, конкурентов и целевую аудиторию</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-info">
+                <h4>Стратегия и запуск</h4>
+                <p>Разрабатываем план и запускаем кампании</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-info">
+                <h4>Оптимизация и рост</h4>
+                <p>Анализируем данные и масштабируем результаты</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <div class="about-visual">
+            <div class="visual-card vc1">
+              <div class="vc-icon">📈</div>
+              <div class="vc-info">
+                <span class="vc-num">+340%</span>
+                <span class="vc-label">ROI за 3 месяца</span>
+              </div>
+            </div>
+            <div class="visual-card vc2">
+              <div class="vc-icon">🎯</div>
+              <div class="vc-info">
+                <span class="vc-num">-60%</span>
+                <span class="vc-label">Стоимость лида</span>
+              </div>
+            </div>
+            <div class="visual-card vc3">
+              <div class="vc-icon">🚀</div>
+              <div class="vc-info">
+                <span class="vc-num">x5</span>
+                <span class="vc-label">Охват за месяц</span>
+              </div>
+            </div>
+            <div class="about-avatar">
+              <div class="avatar-ring"></div>
+              <div class="avatar-inner">CD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="cases" id="cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal">Результаты</span>
+        <h2 class="section-title reveal">Наши <span class="gradient-text">кейсы</span></h2>
+        <p class="section-desc reveal">Реальные результаты реальных клиентов</p>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card reveal">
+          <div class="case-tag">Meta Ads</div>
+          <h3>Интернет-магазин одежды</h3>
+          <p>Снизили стоимость покупки с 12$ до 3.8$ за 6 недель через оптимизацию аудиторий и креативов</p>
+          <div class="case-metrics">
+            <div class="metric"><span class="m-val">-68%</span><span class="m-key">CPP</span></div>
+            <div class="metric"><span class="m-val">+420%</span><span class="m-key">ROAS</span></div>
+            <div class="metric"><span class="m-val">x3.2</span><span class="m-key">Продажи</span></div>
+          </div>
+        </div>
+        <div class="case-card reveal">
+          <div class="case-tag">Google Ads</div>
+          <h3>Строительная компания</h3>
+          <p>Построили воронку через Google Search + ремаркетинг. Заявки выросли в 4 раза при том же бюджете</p>
+          <div class="case-metrics">
+            <div class="metric"><span class="m-val">x4</span><span class="m-key">Заявки</span></div>
+            <div class="metric"><span class="m-val">-45%</span><span class="m-key">CPL</span></div>
+            <div class="metric"><span class="m-val">28%</span><span class="m-key">Конверсия</span></div>
+          </div>
+        </div>
+        <div class="case-card reveal">
+          <div class="case-tag">SMM + Reels</div>
+          <h3>Ресторанный бизнес</h3>
+          <p>Создали вирусный контент и выстроили контент-машину. 7500+ Reels привели тысячи новых клиентов</p>
+          <div class="case-metrics">
+            <div class="metric"><span class="m-val">7.5K+</span><span class="m-key">Reels</span></div>
+            <div class="metric"><span class="m-val">+280%</span><span class="m-key">Охват</span></div>
+            <div class="metric"><span class="m-val">x2.8</span><span class="m-key">Клиенты</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal">Тарифы</span>
+        <h2 class="section-title reveal">Прозрачные <span class="gradient-text">цены</span></h2>
+        <p class="section-desc reveal">Выберите тариф или запросите индивидуальное предложение</p>
+      </div>
+
+      <div class="pricing-tabs reveal">
+        <button class="ptab active" data-tab="meta">Meta Ads</button>
+        <button class="ptab" data-tab="google">Google Ads</button>
+        <button class="ptab" data-tab="smm">SMM</button>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- META ADS PLANS -->
+        <div class="pricing-group" id="tab-meta">
+          <div class="price-card reveal">
+            <div class="price-tag">СТАРТ</div>
+            <h3>Meta Basic</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">299</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Идеально для начинающих бизнесов</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Настройка рекламного кабинета</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 2 рекламные кампании</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Анализ целевой аудитории</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Ежемесячный отчёт</li>
+              <li class="disabled"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" fill="none"/></svg> A/B тестирование</li>
+            </ul>
+            <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+
+          <div class="price-card featured reveal">
+            <div class="price-badge">Популярный</div>
+            <div class="price-tag">РОСТ</div>
+            <h3>Meta Pro</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">599</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Для бизнесов готовых к масштабированию</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Всё из базового плана</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> До 5 кампаний одновременно</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> A/B тестирование</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Lookalike аудитории</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Еженедельные отчёты</li>
+            </ul>
+            <a href="#contact" class="btn-price featured">Выбрать план</a>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-tag">МАСШТАБ</div>
+            <h3>Meta Max</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">999</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Полное управление для агрессивного роста</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Всё из Pro плана</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Неограниченные кампании</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Dedicated менеджер</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Ежедневная оптимизация</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Стратегическое консультирование</li>
+            </ul>
+            <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+        </div>
+
+        <!-- GOOGLE ADS PLANS -->
+        <div class="pricing-group hidden" id="tab-google">
+          <div class="price-card reveal">
+            <div class="price-tag">СТАРТ</div>
+            <h3>Google Start</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">349</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Первые шаги в Google Ads</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Настройка Search кампаний</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Подбор ключевых слов</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Базовая аналитика</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Ежемесячный отчёт</li>
+              <li class="disabled"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Performance Max</li>
+            </ul>
+            <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+
+          <div class="price-card featured reveal">
+            <div class="price-badge">Популярный</div>
+            <div class="price-tag">РОСТ</div>
+            <h3>Google Pro</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">649</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Максимальная видимость в поиске</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Search + Display</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Performance Max</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Ремаркетинг</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Conversion tracking</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Еженедельные отчёты</li>
+            </ul>
+            <a href="#contact" class="btn-price featured">Выбрать план</a>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-tag">МАСШТАБ</div>
+            <h3>Google Max</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">1099</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Полное доминирование в Google</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Все типы кампаний</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> YouTube реклама</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Shopping кампании</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Dedicated стратег</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Приоритетная поддержка</li>
+            </ul>
+            <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+        </div>
+
+        <!-- SMM PLANS -->
+        <div class="pricing-group hidden" id="tab-smm">
+          <div class="price-card reveal">
+            <div class="price-tag">СТАРТ</div>
+            <h3>SMM Basic</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">249</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Постоянное присутствие в соцсетях</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 12 постов в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Дизайн карточек</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 1 соцсеть</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Базовая аналитика</li>
+              <li class="disabled"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Reels production</li>
+            </ul>
+            <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+
+          <div class="price-card featured reveal">
+            <div class="price-badge">Популярный</div>
+            <div class="price-tag">РОСТ</div>
+            <h3>SMM Pro</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">499</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Контент-машина для вашего бренда</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 20 постов в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 8 Reels/Shorts</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 2 соцсети</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Сторисы каждый день</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Комьюнити-менеджмент</li>
+            </ul>
+            <a href="#contact" class="btn-price featured">Выбрать план</a>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-tag">МАСШТАБ</div>
+            <h3>SMM Max</h3>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="amount">899</span>
+              <span class="period">/мес</span>
+            </div>
+            <p class="price-desc">Полное присутствие на всех платформах</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Неограниченный контент</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 20+ Reels в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Все соцсети</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Influencer outreach</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Персональный менеджер</li>
+            </ul>
+            <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-note reveal">
+        <p>💡 Нужно индивидуальное решение? <a href="#contact">Напишите нам</a> и мы составим персональное предложение под ваши задачи.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-left">
+          <span class="section-tag reveal">Связаться</span>
+          <h2 class="section-title reveal">Готовы расти?<br /><span class="gradient-text">Начнём сегодня</span></h2>
+          <p class="contact-text reveal">
+            Оставьте заявку и мы свяжемся с вами в течение 2 часов.
+            Первая консультация — бесплатно.
+          </p>
+          <div class="contact-info reveal">
+            <a href="tel:+37368356089" class="contact-link">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6.012 10.39C7.19 12.707 9.065 14.576 11.39 15.75l2.347-2.347a1 1 0 011.028-.242c1.132.376 2.346.578 3.594.578a1 1 0 011 1v3.5a1 1 0 01-1 1C9.613 19.239 4.761 14.387 4.761 8.4a1 1 0 011-1H9.26a1 1 0 011 1c0 1.252.202 2.466.578 3.594a1 1 0 01-.242 1.028L8.25 15.37" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">Телефон</span>
+                <span class="detail-value">+373 68 356 089</span>
+              </div>
+            </a>
+            <a href="https://t.me/calvindalli" target="_blank" class="contact-link">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M21 5L2 12.5l7 1M21 5l-4 15-8-5.5M21 5L9 13.5m0 0V19l3.5-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">Telegram</span>
+                <span class="detail-value">@calvindalli</span>
+              </div>
+            </a>
+            <div class="contact-link">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 119.5 9 2.5 2.5 0 0112 11.5z" fill="currentColor"/></svg>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">Локация</span>
+                <span class="detail-value">Кишинёв, Молдова</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right reveal">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" placeholder=" " required />
+              <label for="name">Ваше имя</label>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" placeholder=" " required />
+              <label for="phone">Телефон / WhatsApp</label>
+            </div>
+            <div class="form-group">
+              <select id="service" required>
+                <option value="" disabled selected></option>
+                <option value="meta">Meta Ads</option>
+                <option value="google">Google Ads</option>
+                <option value="smm">SMM</option>
+                <option value="cgi">CGI</option>
+                <option value="complex">Комплексный маркетинг</option>
+              </select>
+              <label for="service">Нужная услуга</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" placeholder=" " rows="4"></textarea>
+              <label for="message">Расскажите о вашем бизнесе</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span>Отправить заявку</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-text">Calvin</span>
+            <span class="logo-accent">Dalli</span>
+          </a>
+          <p>Digital Marketing Agency<br />Кишинёв, Молдова</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Услуги</h4>
+            <ul>
+              <li><a href="#services">Meta Ads</a></li>
+              <li><a href="#services">Google Ads</a></li>
+              <li><a href="#services">SMM</a></li>
+              <li><a href="#services">CGI</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Компания</h4>
+            <ul>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#cases">Кейсы</a></li>
+              <li><a href="#pricing">Цены</a></li>
+              <li><a href="#contact">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Контакты</h4>
+            <ul>
+              <li><a href="tel:+37368356089">+373 68 356 089</a></li>
+              <li><a href="https://t.me/calvindalli">Telegram</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Calvin Dalli. Все права защищены.</p>
+        <p>Digital Marketing Agency — Кишинёв, Молдова</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast">
+    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+    Заявка отправлена! Свяжемся с вами скоро.
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
