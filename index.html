@@ -6,7 +6,7 @@
 
   <!-- ===== SEO META TAGS ===== -->
   <title>Calvin Dalli — Digital Marketing Agency в Кишинёве | Meta Ads, Google Ads, SMM</title>
-  <meta name="description" content="Calvin Dalli — digital-агентство полного цикла в Кишинёве. Meta Ads, Google Ads, SMM, CGI. Бесплатный аудит. Рост продаж от 30% в первый месяц. +373 68 356 089" />
+  <meta name="description" content="Calvin Dalli — digital-агентство полного цикла в Кишинёве. Meta Ads, Google Ads, SMM, AI Video. Бесплатный аудит. Рост продаж от 30% в первый месяц. +373 68 356 089" />
   <meta name="keywords" content="digital marketing Кишинёв, реклама в Facebook Молдова, Google Ads Молдова, SMM агентство Кишинёв, таргетированная реклама, Meta Ads Moldova, маркетинговое агентство" />
   <meta name="author" content="Calvin Dalli Media Agency" />
   <meta name="robots" content="index, follow" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://calvindalli.md/" />
   <meta property="og:title" content="Calvin Dalli — Digital Marketing Agency в Кишинёве" />
-  <meta property="og:description" content="Meta Ads, Google Ads, SMM, CGI — полный спектр digital-маркетинга. Бесплатный аудит. Рост продаж от 30% в первый месяц." />
+  <meta property="og:description" content="Meta Ads, Google Ads, SMM, AI Video — полный спектр digital-маркетинга. Бесплатный аудит. Рост продаж от 30% в первый месяц." />
   <meta property="og:image" content="https://calvindalli.md/og-image.jpg" />
   <meta property="og:locale" content="ru_MD" />
   <meta property="og:site_name" content="Calvin Dalli Media Agency" />
@@ -24,7 +24,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Calvin Dalli — Digital Marketing Agency в Кишинёве" />
-  <meta name="twitter:description" content="Meta Ads, Google Ads, SMM, CGI. Бесплатный аудит. Рост продаж от 30% в первый месяц." />
+  <meta name="twitter:description" content="Meta Ads, Google Ads, SMM, AI Video. Бесплатный аудит. Рост продаж от 30% в первый месяц." />
   <meta name="twitter:image" content="https://calvindalli.md/og-image.jpg" />
 
   <!-- Schema.org (структурированные данные для Google) -->
@@ -35,7 +35,7 @@
     "name": "Calvin Dalli Media Agency",
     "url": "https://calvindalli.md",
     "logo": "https://calvindalli.md/logo.png",
-    "description": "Digital-агентство полного цикла в Кишинёве: Meta Ads, Google Ads, SMM, CGI",
+    "description": "Digital-агентство полного цикла в Кишинёве: Meta Ads, Google Ads, SMM, AI Video",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Кишинёв",
@@ -54,6 +54,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .lang-switcher {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(124, 58, 255, 0.3);
+      color: var(--text-muted);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover {
+      border-color: rgba(124, 58, 255, 0.8);
+      color: var(--text);
+    }
+    .lang-btn.active {
+      background: rgba(124, 58, 255, 0.3);
+      border-color: rgba(124, 58, 255, 0.8);
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
   <!-- Custom cursor -->
@@ -71,13 +100,17 @@
         <span class="logo-accent">Dalli</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#services" class="nav-link">Услуги</a></li>
-        <li><a href="#about" class="nav-link">О нас</a></li>
-        <li><a href="#cases" class="nav-link">Кейсы</a></li>
-        <li><a href="#pricing" class="nav-link">Цены</a></li>
-        <li><a href="#contact" class="nav-link">Контакты</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="services">Услуги</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="about">О нас</a></li>
+        <li><a href="#cases" class="nav-link" data-i18n="cases">Кейсы</a></li>
+        <li><a href="#pricing" class="nav-link" data-i18n="pricing">Цены</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="contacts">Контакты</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Начать проект</a>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="ro">RO</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="startProject">Начать проект</a>
       <button class="burger" id="burger" aria-label="Открыть меню">
         <span></span><span></span><span></span>
       </button>
@@ -101,43 +134,43 @@
     <div class="hero-content">
       <div class="hero-badge reveal">
         <span class="badge-dot"></span>
-        Digital Marketing Agency — Кишинёв, Молдова
+        <span data-i18n="heroBadge">Digital Marketing Agency — Кишинёв, Молдова</span>
       </div>
       <h1 class="hero-title reveal">
-        <span class="line">Превращаем рекламный</span>
-        <span class="line gradient-text">бюджет в прибыль</span>
-        <span class="line">для вашего бизнеса</span>
+        <span class="line" data-i18n="heroTitle1">Превращаем рекламный</span>
+        <span class="line gradient-text" data-i18n="heroTitle2">бюджет в прибыль</span>
+        <span class="line" data-i18n="heroTitle3">для вашего бизнеса</span>
       </h1>
-      <p class="hero-desc reveal">
-        Meta Ads · Google Ads · SMM · CGI — строим системы привлечения клиентов, которые работают 24/7.
+      <p class="hero-desc reveal" data-i18n="heroDesc">
+        Meta Ads · Google Ads · SMM · AI Video — строим системы привлечения клиентов, которые работают 24/7.
         Первые результаты уже в течение первых недель после запуска.
       </p>
       <div class="hero-actions reveal">
-        <a href="#contact" class="btn-primary">
+        <a href="#contact" class="btn-primary" data-i18n="freeAudit">
           <span>Получить бесплатный аудит</span>
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#cases" class="btn-secondary">Смотреть кейсы</a>
+        <a href="#cases" class="btn-secondary" data-i18n="viewCases">Смотреть кейсы</a>
       </div>
       <div class="hero-stats reveal">
         <div class="stat-item">
           <span class="stat-num" data-count="200">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Клиентов</span>
+          <span class="stat-label" data-i18n="clients">Клиентов</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-num" data-count="700">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Проектов</span>
+          <span class="stat-label" data-i18n="projects">Проектов</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-num" data-count="7500">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Рилсов</span>
+          <span class="stat-label" data-i18n="reels">Рилсов</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Лет опыта</span>
+          <span class="stat-label" data-i18n="yearsExp">Лет опыта</span>
         </div>
       </div>
     </div>
@@ -154,7 +187,7 @@
         <span>Meta Ads</span><span class="dot">●</span>
         <span>Google Ads</span><span class="dot">●</span>
         <span>SMM</span><span class="dot">●</span>
-        <span>CGI</span><span class="dot">●</span>
+        <span>AI Video</span><span class="dot">●</span>
         <span>Reels Production</span><span class="dot">●</span>
         <span>Targeting</span><span class="dot">●</span>
         <span>Content Creation</span><span class="dot">●</span>
@@ -162,7 +195,7 @@
         <span>Meta Ads</span><span class="dot">●</span>
         <span>Google Ads</span><span class="dot">●</span>
         <span>SMM</span><span class="dot">●</span>
-        <span>CGI</span><span class="dot">●</span>
+        <span>AI Video</span><span class="dot">●</span>
         <span>Reels Production</span><span class="dot">●</span>
         <span>Targeting</span><span class="dot">●</span>
         <span>Content Creation</span><span class="dot">●</span>
@@ -175,9 +208,9 @@
   <section class="services" id="services">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag reveal">Наши услуги</span>
-        <h2 class="section-title reveal">Digital-маркетинг<br /><span class="gradient-text">под ключ</span></h2>
-        <p class="section-desc reveal">
+        <span class="section-tag reveal" data-i18n="ourServices">Наши услуги</span>
+        <h2 class="section-title reveal"><span data-i18n="servicesTitle">Digital-маркетинг</span><br /><span class="gradient-text">под ключ</span></h2>
+        <p class="section-desc reveal" data-i18n="servicesDesc">
           Мы не просто запускаем рекламу — мы строим предсказуемые системы привлечения клиентов
           с измеримым ROI и прозрачной отчётностью на каждом этапе.
         </p>
@@ -255,7 +288,7 @@
           </div>
         </div>
 
-        <!-- CGI -->
+        <!-- AI VIDEO CONTENT -->
         <div class="service-card reveal service-card--wide" data-index="3">
           <div class="card-glow"></div>
           <div class="card-number">04</div>
@@ -265,13 +298,13 @@
               <circle cx="38" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
-          <h3 class="card-title">CGI & Визуализация</h3>
-          <p class="card-desc">3D-реклама и компьютерная графика для тех, кто хочет выделиться. Создаём виральные CGI-ролики и визуализации продукта, которые невозможно снять обычной камерой — ваш бренд в сценах, которые запоминаются.</p>
+          <h3 class="card-title">AI Video Content</h3>
+          <p class="card-desc">Инновационное AI-видео с интеграцией вашего продукта в реальные сцены. Создаём видео контент, который невозможно отличить от профессионально снятого — ваш бренд в центре внимания.</p>
           <ul class="card-features">
-            <li>3D product visualization</li>
-            <li>CGI-ролики для рекламных кампаний</li>
-            <li>Анимация бренда и логотипа</li>
-            <li>Виральный контент для соцсетей</li>
+            <li>AI-видео высокого качества</li>
+            <li>Интеграция продукта в сцены</li>
+            <li>Быстрое создание контента</li>
+            <li>Контент для соцсетей и рекламы</li>
           </ul>
           <div class="card-arrow">
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -286,14 +319,14 @@
     <div class="container">
       <div class="about-layout">
         <div class="about-left">
-          <span class="section-tag reveal">О Calvin Dalli</span>
-          <h2 class="section-title reveal">Digital-агентство,<br /><span class="gradient-text">которое говорит цифрами</span></h2>
-          <p class="about-text reveal">
+          <span class="section-tag reveal" data-i18n="aboutCalvin">О Calvin Dalli</span>
+          <h2 class="section-title reveal"><span data-i18n="aboutTitle">Digital-агентство, которое говорит цифрами</span><br /><span class="gradient-text">которое говорит цифрами</span></h2>
+          <p class="about-text reveal" data-i18n="aboutText1">
             Calvin Dalli — это агентство нового формата из Кишинёва. За 6+ лет работы мы помогли более 200 бизнесам
             в Молдове и за рубежом выстроить стабильный поток клиентов через digital-каналы.
             Наша сила — в системном подходе и прозрачности на каждом шаге.
           </p>
-          <p class="about-text reveal">
+          <p class="about-text reveal" data-i18n="aboutText2">
             Мы не обещаем воздух — мы устанавливаем чёткие KPI, отслеживаем каждый показатель
             и регулярно отчитываемся перед клиентом. Если реклама не работает — мы её чиним, а не оправдываемся.
           </p>
@@ -366,9 +399,9 @@
   <section class="cases" id="cases">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag reveal">Результаты</span>
-        <h2 class="section-title reveal">Реальные <span class="gradient-text">кейсы</span></h2>
-        <p class="section-desc reveal">Не обещания — конкретные цифры наших клиентов</p>
+        <span class="section-tag reveal" data-i18n="results">Результаты</span>
+        <h2 class="section-title reveal"><span data-i18n="results">Результаты</span> <span class="gradient-text" data-i18n="realCases">Реальные кейсы</span></h2>
+        <p class="section-desc reveal" data-i18n="caseSubtitle">Не обещания — конкретные цифры наших клиентов</p>
       </div>
       <div class="cases-grid">
         <div class="case-card reveal">
@@ -409,15 +442,20 @@
   <section class="pricing" id="pricing">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag reveal">Тарифы</span>
-        <h2 class="section-title reveal">Прозрачные <span class="gradient-text">цены</span></h2>
-        <p class="section-desc reveal">Никаких скрытых платежей — только фиксированная стоимость и понятный результат</p>
+        <span class="section-tag reveal" data-i18n="tariffs">Тарифы</span>
+        <h2 class="section-title reveal"><span data-i18n="tariffs">Тарифы</span> <span class="gradient-text" data-i18n="transparentPrices">Прозрачные цены</span></h2>
+        <p class="section-desc reveal" data-i18n="pricingDesc">Никаких скрытых платежей — только фиксированная стоимость и понятный результат</p>
       </div>
 
       <div class="pricing-tabs reveal">
         <button class="ptab active" data-tab="meta">Meta Ads</button>
         <button class="ptab" data-tab="google">Google Ads</button>
         <button class="ptab" data-tab="smm">SMM</button>
+        <button class="ptab" data-tab="ai-video">AI Video Content</button>
+      </div>
+
+      <div class="pricing-budget-notice reveal">
+        <p data-i18n="budgetNote">⚠️ Рекламный бюджет оплачивается отдельно</p>
       </div>
 
       <div class="pricing-grid">
@@ -547,60 +585,140 @@
         <div class="pricing-group hidden" id="tab-smm">
           <div class="price-card reveal">
             <div class="price-tag">СТАРТ</div>
-            <h3>SMM Basic</h3>
+            <h3>SMM Start</h3>
             <div class="price-amount">
-              <span class="currency">$</span>
-              <span class="amount">249</span>
+              <span class="currency">€</span>
+              <span class="amount">650</span>
               <span class="period">/мес</span>
             </div>
-            <p class="price-desc">Регулярное присутствие в соцсетях и первые шаги к аудитории</p>
+            <p class="price-desc">Instagram + Facebook</p>
             <ul class="price-features">
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 12 постов в месяц</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Дизайн карточек и визуал</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 1 соцсеть</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Базовая аналитика</li>
-              <li class="disabled"><svg viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Reels production</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 10 постов в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 4 видео на смартфон</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 6 фото-постов</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 3 съёмки в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Контент-планирование</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Репост всех постов в сторис</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Работа с блогерами</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Копирайтинг</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Аналитика и отчетность</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Создание визуального стиля</li>
             </ul>
             <a href="#contact" class="btn-price">Выбрать план</a>
           </div>
 
           <div class="price-card featured reveal">
             <div class="price-badge">Популярный</div>
-            <div class="price-tag">РОСТ</div>
-            <h3>SMM Pro</h3>
+            <div class="price-tag">МЕДИУМ</div>
+            <h3>SMM Medium</h3>
             <div class="price-amount">
-              <span class="currency">$</span>
-              <span class="amount">499</span>
+              <span class="currency">€</span>
+              <span class="amount">1100</span>
               <span class="period">/мес</span>
             </div>
-            <p class="price-desc">Контент-машина для вашего бренда — регулярно, системно, с результатом</p>
+            <p class="price-desc">Instagram + Facebook</p>
             <ul class="price-features">
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 20 постов в месяц</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 8 Reels/Shorts</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 2 соцсети</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Stories каждый день</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Комьюнити-менеджмент</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 14 постов в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 1 видео на проф. камеру</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 4 видео на смартфон</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 9 фото-постов</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Insta Stories (35 уникальных)</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Контент-планирование</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Репост всех постов в сторис</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Работа с блогерами</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Копирайтинг</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Аналитика и отчетность 2 соц сетей</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Создание визуального стиля</li>
             </ul>
             <a href="#contact" class="btn-price featured">Выбрать план</a>
           </div>
 
           <div class="price-card reveal">
-            <div class="price-tag">МАСШТАБ</div>
-            <h3>SMM Max</h3>
+            <div class="price-tag">ПРЕМИУМ</div>
+            <h3>SMM Premium</h3>
             <div class="price-amount">
-              <span class="currency">$</span>
-              <span class="amount">899</span>
+              <span class="currency">€</span>
+              <span class="amount">1350</span>
               <span class="period">/мес</span>
             </div>
-            <p class="price-desc">Полное присутствие на всех платформах — от контента до коллабораций</p>
+            <p class="price-desc">Instagram + Facebook</p>
             <ul class="price-features">
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Неограниченный контент</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 20+ Reels в месяц</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Все соцсети</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Influencer outreach</li>
-              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Персональный менеджер</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 17 постов в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 1 видео премиум (CGI/дрон)</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 4 видео на смартфон</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 12 фото-постов</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Insta Stories (40 уникальных)</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> 5 съёмок в месяц</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Контент-планирование</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Работа с блогерами</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Копирайтинг</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Аналитика и отчетность 2 соц сетей</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Создание визуального стиля</li>
             </ul>
             <a href="#contact" class="btn-price">Выбрать план</a>
+          </div>
+        </div>
+
+        <!-- AI VIDEO CONTENT PLANS -->
+        <div class="pricing-group hidden" id="tab-ai-video">
+          <div class="price-card reveal">
+            <div class="price-tag">5 СЕКУНД</div>
+            <h3>AI Video 5s</h3>
+            <div class="price-amount">
+              <span class="currency">€</span>
+              <span class="amount">85</span>
+              <span class="period">+</span>
+            </div>
+            <p class="price-desc">1-3 кадра</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> AI-видео высокого качества</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> До создания видео — фото-кадры на утверждение</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Включено до 3 правок</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Каждая дополнительная правка — 17 €</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Срок: 1-3 рабочих дня</li>
+            </ul>
+            <a href="#contact" class="btn-price">Заказать</a>
+          </div>
+
+          <div class="price-card featured reveal">
+            <div class="price-badge">Популярный</div>
+            <div class="price-tag">15 СЕКУНД</div>
+            <h3>AI Video 15s</h3>
+            <div class="price-amount">
+              <span class="currency">€</span>
+              <span class="amount">152</span>
+              <span class="period"></span>
+            </div>
+            <p class="price-desc">5-7 кадров</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> AI-видео высокого качества</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> До создания видео — фото-кадры на утверждение</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Включено до 3 правок</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Каждая дополнительная правка — 17 €</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Голос-за (RO/RU) +50 €</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Срок: 1-3 рабочих дня</li>
+            </ul>
+            <a href="#contact" class="btn-price featured">Заказать</a>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-tag">25 СЕКУНД</div>
+            <h3>AI Video 25s</h3>
+            <div class="price-amount">
+              <span class="currency">€</span>
+              <span class="amount">270</span>
+              <span class="period">+</span>
+            </div>
+            <p class="price-desc">7-12 кадров</p>
+            <ul class="price-features">
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> AI-видео высокого качества</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> До создания видео — фото-кадры на утверждение</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Включено до 3 правок</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Каждая дополнительная правка — 17 €</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Голос-за (RO/RU) +50 €</li>
+              <li><svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg> Срок: 1-3 рабочих дня</li>
+            </ul>
+            <a href="#contact" class="btn-price">Заказать</a>
           </div>
         </div>
       </div>
@@ -616,9 +734,9 @@
     <div class="container">
       <div class="contact-layout">
         <div class="contact-left">
-          <span class="section-tag reveal">Связаться</span>
-          <h2 class="section-title reveal">Готовы расти?<br /><span class="gradient-text">Начнём сегодня</span></h2>
-          <p class="contact-text reveal">
+          <span class="section-tag reveal" data-i18n="readyGrow">Готовы расти?</span>
+          <h2 class="section-title reveal"><span data-i18n="readyGrow">Готовы расти?</span><br /><span class="gradient-text" data-i18n="startProject">Начать проект</span></h2>
+          <p class="contact-text reveal" data-i18n="contactDesc">
             Оставьте заявку — свяжемся в течение 2 часов и проведём бесплатный аудит вашего маркетинга.
             Расскажем, что работает у конкурентов и как это обойти.
           </p>
@@ -628,7 +746,7 @@
                 <svg viewBox="0 0 24 24" fill="none"><path d="M6.012 10.39C7.19 12.707 9.065 14.576 11.39 15.75l2.347-2.347a1 1 0 011.028-.242c1.132.376 2.346.578 3.594.578a1 1 0 011 1v3.5a1 1 0 01-1 1C9.613 19.239 4.761 14.387 4.761 8.4a1 1 0 011-1H9.26a1 1 0 011 1c0 1.252.202 2.466.578 3.594a1 1 0 01-.242 1.028L8.25 15.37" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               </div>
               <div class="contact-detail">
-                <span class="detail-label">Телефон</span>
+                <span class="detail-label" data-i18n="phone">Телефон</span>
                 <span class="detail-value">+373 68 356 089</span>
               </div>
             </a>
@@ -637,7 +755,7 @@
                 <svg viewBox="0 0 24 24" fill="none"><path d="M21 5L2 12.5l7 1M21 5l-4 15-8-5.5M21 5L9 13.5m0 0V19l3.5-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <div class="contact-detail">
-                <span class="detail-label">Telegram</span>
+                <span class="detail-label" data-i18n="telegram">Telegram</span>
                 <span class="detail-value">@calvindalli</span>
               </div>
             </a>
@@ -646,7 +764,7 @@
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 119.5 9 2.5 2.5 0 0112 11.5z" fill="currentColor"/></svg>
               </div>
               <div class="contact-detail">
-                <span class="detail-label">Локация</span>
+                <span class="detail-label" data-i18n="location">Локация</span>
                 <span class="detail-value">Кишинёв, Молдова</span>
               </div>
             </div>
@@ -655,29 +773,29 @@
         <div class="contact-right reveal">
           <form class="contact-form" id="contactForm" novalidate>
             <div class="form-group">
-              <input type="text" id="name" name="name" placeholder=" " required autocomplete="name" />
-              <label for="name">Ваше имя</label>
+              <input type="text" id="name" name="name" placeholder=" " required autocomplete="name" data-i18n="yourName" />
+              <label for="name" data-i18n="yourName">Ваше имя</label>
             </div>
             <div class="form-group">
-              <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel" />
-              <label for="phone">Телефон / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder=" " required autocomplete="tel" data-i18n="phoneWhatsapp" />
+              <label for="phone" data-i18n="phoneWhatsapp">Телефон / WhatsApp</label>
             </div>
             <div class="form-group">
-              <select id="service" name="service" required>
+              <select id="service" name="service" required data-i18n="neededService">
                 <option value="" disabled selected></option>
                 <option value="meta">Meta Ads</option>
                 <option value="google">Google Ads</option>
                 <option value="smm">SMM</option>
-                <option value="cgi">CGI</option>
+                <option value="ai-video">AI Video Content</option>
                 <option value="complex">Комплексный маркетинг</option>
               </select>
-              <label for="service">Нужная услуга</label>
+              <label for="service" data-i18n="neededService">Нужная услуга</label>
             </div>
             <div class="form-group">
-              <textarea id="message" name="message" placeholder=" " rows="4"></textarea>
-              <label for="message">Расскажите о вашем бизнесе</label>
+              <textarea id="message" name="message" placeholder=" " rows="4" data-i18n="tellAboutBusiness"></textarea>
+              <label for="message" data-i18n="tellAboutBusiness">Расскажите о вашем бизнесе</label>
             </div>
-            <button type="submit" class="btn-submit">
+            <button type="submit" class="btn-submit" data-i18n="sendRequest">
               <span>Отправить заявку</span>
               <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
@@ -705,7 +823,7 @@
               <li><a href="#services">Meta Ads</a></li>
               <li><a href="#services">Google Ads</a></li>
               <li><a href="#services">SMM</a></li>
-              <li><a href="#services">CGI</a></li>
+              <li><a href="#services">AI Video</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -722,7 +840,7 @@
             <ul>
               <li><a href="tel:+37368356089">+373 68 356 089</a></li>
               <li><a href="https://t.me/calvindalli_support_bot" target="_blank" rel="noopener noreferrer">Telegram</a></li>
-              <li><a href="https://www.instagram.com/calvindalli" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.instagram.com/calvin_dalli_media_agency/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>
           </div>
         </div>
@@ -730,6 +848,9 @@
       <div class="footer-bottom">
         <p>© 2025 Calvin Dalli. Все права защищены.</p>
         <p>Digital Marketing Agency — Кишинёв, Молдова</p>
+      </div>
+      <div class="footer-credit">
+        <a href="https://www.instagram.com/aleksandrsych/" target="_blank" rel="noopener noreferrer" data-i18n="siteCredit">Сайт сделал Сыч Александр!</a>
       </div>
     </div>
   </footer>
@@ -740,6 +861,7 @@
     Заявка отправлена! Свяжемся с вами скоро.
   </div>
 
+  <script src="translations.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

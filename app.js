@@ -4,6 +4,7 @@ const TELEGRAM_BOT_TOKEN = '8733946115:AAHU7-2Hw60yD32pWJj2ThApsciWe3ufWVs';
 const TELEGRAM_CHAT_ID = '-5169580118';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLanguage();
   initCursor();
   initNav();
   initParticles();
@@ -15,6 +16,221 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initHeroAnimations();
 });
+
+// ============ LANGUAGE SWITCHER ============
+function initLanguage() {
+  // Get saved language or default to 'ru'
+  const savedLang = localStorage.getItem('language') || 'ru';
+  setLanguage(savedLang);
+
+  // Setup language switcher buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      setLanguage(lang);
+      localStorage.setItem('language', lang);
+    });
+  });
+}
+
+function setLanguage(lang) {
+  if (!translations || !translations[lang]) return;
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  // Update HTML lang attribute
+  document.documentElement.lang = lang === 'ro' ? 'ro' : 'ru';
+
+  // Update all elements with data-i18n attribute
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const text = t(key, lang);
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = text;
+    } else if (el.tagName === 'SELECT') {
+      // Handle select options
+      if (key === 'neededService') {
+        el.innerHTML = `
+          <option value="" disabled selected></option>
+          <option value="meta">${t('metaAds', lang)}</option>
+          <option value="google">${t('googleAds', lang)}</option>
+          <option value="smm">${t('smm', lang)}</option>
+          <option value="cgi">${t('cgi', lang)}</option>
+          <option value="complex">${t('customSolution', lang)}</option>
+        `;
+      }
+    } else {
+      el.textContent = text;
+    }
+  });
+
+  // Update page title
+  document.title = `${t('servicesTitle', lang)} | Calvin Dalli — ${lang === 'ro' ? 'Agenție de Marketing Digital' : 'Digital Marketing Agency'}`;
+
+  // Update specific sections that need complex updates
+  updateServiceCards(lang);
+  updateAboutSection(lang);
+  updateCasesSection(lang);
+  updatePricingCards(lang);
+  updateFooter(lang);
+  updateModals(lang);
+}
+
+function updateServiceCards(lang) {
+  const services = [
+    { index: 0, title: 'metaAds', desc: 'metaAdsDesc', features: 'metaFeatures' },
+    { index: 1, title: 'googleAds', desc: 'googleAdsDesc', features: 'googleFeatures' },
+    { index: 2, title: 'smm', desc: 'smmDesc', features: 'smmFeatures' },
+    { index: 3, title: 'cgi', desc: 'cgiDesc', features: 'cgiFeatures' }
+  ];
+
+  services.forEach(service => {
+    const card = document.querySelector(`.service-card[data-index="${service.index}"]`);
+    if (card) {
+      card.querySelector('.card-title').textContent = t(service.title, lang);
+      card.querySelector('.card-desc').textContent = t(service.desc, lang);
+      const features = translations[lang][service.features];
+      const featuresList = card.querySelector('.card-features');
+      if (featuresList && features) {
+        featuresList.innerHTML = features.map(f => `<li>${f}</li>`).join('');
+      }
+    }
+  });
+}
+
+function updateAboutSection(lang) {
+  const about = document.querySelector('.about');
+  if (!about) return;
+
+  about.querySelector('.section-tag').textContent = t('aboutCalvin', lang);
+  about.querySelector('.section-title').innerHTML = t('aboutTitle', lang).replace(/[^а-яА-ЯèéêëìíîïнрОА-Я\s]/g, '') + '<br /><span class="gradient-text">' + t('aboutTitle', lang).split('\n')[1] || '' + '</span>';
+
+  const process = document.querySelectorAll('.process-step');
+  if (process[0]) process[0].querySelector('h4').textContent = t('auditStrategy', lang);
+  if (process[0]) process[0].querySelector('p').textContent = t('auditStrategyDesc', lang);
+  if (process[1]) process[1].querySelector('h4').textContent = t('launchTest', lang);
+  if (process[1]) process[1].querySelector('p').textContent = t('launchTestDesc', lang);
+  if (process[2]) process[2].querySelector('h4').textContent = t('optimization', lang);
+  if (process[2]) process[2].querySelector('p').textContent = t('optimizationDesc', lang);
+}
+
+function updateCasesSection(lang) {
+  const cases = document.querySelectorAll('.case-card');
+  const caseData = [
+    { title: 'clothingStore', desc: 'clothingDesc' },
+    { title: 'construction', desc: 'constructionDesc' },
+    { title: 'restaurant', desc: 'restaurantDesc' }
+  ];
+
+  cases.forEach((card, i) => {
+    if (caseData[i]) {
+      card.querySelector('h3').textContent = t(caseData[i].title, lang);
+      card.querySelector('p').textContent = t(caseData[i].desc, lang);
+    }
+  });
+}
+
+function updatePricingCards(lang) {
+  // Update all pricing cards with their new titles and descriptions
+  document.querySelectorAll('.price-card').forEach(card => {
+    const h3 = card.querySelector('h3');
+    const desc = card.querySelector('.price-desc');
+    if (!h3) return;
+
+    const cardText = h3.textContent.trim();
+    
+    // Map old text to translation keys
+    const titleMap = {
+      'Meta Basic': 'metaBasic',
+      'Meta Pro': 'metaPro',
+      'Meta Max': 'metaMax',
+      'Google Start': 'googleStart',
+      'Google Pro': 'googleProTitle',
+      'Google Max': 'googleMax',
+      'SMM Start': 'smmStart',
+      'SMM Medium': 'smmMedium',
+      'SMM Premium': 'smmPremium',
+      'AI Video 5s': 'aiVideo5s',
+      'AI Video 15s': 'aiVideo15s',
+      'AI Video 25s': 'aiVideo25s'
+    };
+
+    const descMap = {
+      'Meta Basic': 'metaBasicDesc',
+      'Meta Pro': 'metaProDesc',
+      'Meta Max': 'metaMaxDesc',
+      'Google Start': 'googleStartDesc',
+      'Google Pro': 'googleProDesc',
+      'Google Max': 'googleMaxDesc',
+      'SMM Start': 'smmStartDesc',
+      'SMM Medium': 'smmMediumDesc',
+      'SMM Premium': 'smmPremiumDesc',
+      'AI Video 5s': 'aiVideo5sDesc',
+      'AI Video 15s': 'aiVideo15sDesc',
+      'AI Video 25s': 'aiVideo25sDesc'
+    };
+
+    const titleKey = titleMap[cardText];
+    const descKey = descMap[cardText];
+
+    if (titleKey) h3.textContent = t(titleKey, lang);
+    if (descKey && desc) desc.textContent = t(descKey, lang);
+
+    // Update button text
+    const btn = card.querySelector('.btn-price');
+    if (btn) btn.textContent = t('choosePlan', lang);
+
+    // Update features list
+    const features = card.querySelectorAll('.price-features li');
+    // This is complex as we'd need to match English text to keys - keep original for now
+  });
+
+  // Update period text
+  document.querySelectorAll('.period').forEach(el => {
+    el.textContent = t('perMonth', lang);
+  });
+}
+
+function updateFooter(lang) {
+  const footer = document.querySelector('footer');
+  if (!footer) return;
+
+  const footerBottomItems = footer.querySelectorAll('.footer-bottom p');
+  if (footerBottomItems[0]) footerBottomItems[0].textContent = t('allRightsReserved', lang);
+  if (footerBottomItems[1]) footerBottomItems[1].textContent = t('footerLocation', lang);
+
+  const footerCols = footer.querySelectorAll('.footer-col');
+  if (footerCols[0]) footerCols[0].querySelector('h4').textContent = t('servicesFooter', lang);
+  if (footerCols[1]) footerCols[1].querySelector('h4').textContent = t('company', lang);
+  if (footerCols[2]) footerCols[2].querySelector('h4').textContent = t('contactsFooter', lang);
+}
+
+function updateModals(lang) {
+  const modal = document.getElementById('planModal');
+  if (modal) {
+    const title = modal.querySelector('.modal-title');
+    const desc = modal.querySelector('.modal-desc');
+    const nameInput = modal.querySelector('#modalName');
+    const phoneInput = modal.querySelector('#modalPhone');
+    const btn = modal.querySelector('.modal-submit span');
+    const privacy = modal.querySelector('.modal-privacy');
+
+    if (title) title.textContent = t('sendRequest', lang);
+    if (desc) desc.textContent = t('contactDesc', lang);
+    if (nameInput) nameInput.placeholder = t('yourName', lang);
+    if (phoneInput) phoneInput.placeholder = t('phoneWhatsapp', lang);
+    if (btn) btn.textContent = t('sendRequest', lang);
+    if (privacy) privacy.textContent = t('dataConsent', lang);
+  }
+
+  const toast = document.getElementById('toast');
+  if (toast) {
+    toast.textContent = t('requestSent', lang);
+  }
+}
 
 // ============ MODAL ============
 function initModal() {

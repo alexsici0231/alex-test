@@ -872,6 +872,22 @@ body:has(button:hover) .cursor-follower {
 .pricing-note a { color: var(--accent2); text-decoration: none; font-weight: 600; }
 .pricing-note a:hover { text-decoration: underline; }
 
+.pricing-budget-notice {
+  text-align: center;
+  margin: 30px 0;
+  padding: 16px 20px;
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+.pricing-budget-notice p {
+  font-size: 0.95rem;
+  color: #ffc107;
+  margin: 0;
+  font-weight: 500;
+}
+
 /* ============ CONTACT ============ */
 .contact {
   padding: 120px 0;
@@ -949,8 +965,9 @@ body:has(button:hover) .cursor-follower {
   position: absolute; left: 16px; top: 14px;
   font-size: 0.9rem; color: var(--text-dim);
   pointer-events: none;
-  transition: transform 0.2s, font-size 0.2s, color 0.2s;
+  transition: transform 0.2s, font-size 0.2s, color 0.2s, opacity 0.2s;
   transform-origin: left top;
+  opacity: 0;
 }
 .form-group input:focus ~ label,
 .form-group input:not(:placeholder-shown) ~ label,
@@ -958,8 +975,9 @@ body:has(button:hover) .cursor-follower {
 .form-group textarea:not(:placeholder-shown) ~ label,
 .form-group select:focus ~ label,
 .form-group select:valid ~ label {
-  transform: translateY(-8px) scale(0.72);
+  transform: translateY(-25px) scale(0.8);
   color: var(--accent2);
+  opacity: 1;
 }
 
 .btn-submit {
@@ -1009,6 +1027,23 @@ body:has(button:hover) .cursor-follower {
   flex-wrap: wrap; gap: 8px;
 }
 .footer-bottom p { font-size: 0.8rem; color: var(--text-dim); }
+.footer-credit {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-credit a {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+.footer-credit a:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
 
 /* ============ TOAST ============ */
 .toast {
