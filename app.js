@@ -134,15 +134,121 @@ function updateCasesSection(lang) {
 }
 
 function updatePricingCards(lang) {
-  // Update all pricing cards with their new titles and descriptions
+  // Complete feature text mapping for all cards
+  const featureMaps = {
+    'Meta Basic': {
+      'Настройка рекламного кабинета': 'setupCabinet',
+      '2 рекламные кампании': 'twoCampaigns',
+      'Анализ целевой аудитории': 'audienceAnalysis',
+      'Ежемесячный отчёт': 'monthlyReport',
+      'A/B тестирование': 'abTesting',
+    },
+    'Meta Pro': {
+      'Всё из базового плана': 'allFromBasic',
+      'До 5 кампаний одновременно': 'fiveCampaigns',
+      'A/B тестирование креативов': 'abTestingCreatives',
+      'Lookalike аудитории': 'lookalikeAudience',
+      'Еженедельные отчёты': 'weeklyReports',
+    },
+    'Meta Max': {
+      'Всё из Pro плана': 'allFromBasic',
+      'Неограниченные кампании': 'allCampaignTypes',
+      'Персональный менеджер': 'dedicatedStrateg',
+      'Ежедневная оптимизация': 'priority247',
+      'Стратегическое консультирование': 'priority247',
+    },
+    'Google Start': {
+      'Настройка Search кампаний': 'searchDisplay',
+      'Подбор ключевых слов': 'searchDisplay',
+      'Базовая аналитика и отчёты': 'basicAnalytics',
+      'Ежемесячный отчёт': 'monthlyReport',
+      'Performance Max': 'performanceMax',
+    },
+    'Google Pro': {
+      'Search + Display кампании': 'searchDisplay',
+      'Performance Max': 'performanceMax',
+      'Ремаркетинг': 'remarketing',
+      'Настройка конверсий': 'conversionSetup',
+      'Еженедельные отчёты': 'weeklyReports',
+    },
+    'Google Max': {
+      'Все типы кампаний': 'allCampaignTypes',
+      'YouTube реклама': 'youtubeShopping',
+      'Shopping кампании': 'youtubeShopping',
+      'Dedicated стратег': 'dedicatedStrateg',
+      'Приоритетная поддержка 24/7': 'priority247',
+    },
+    'SMM Start': {
+      '10 постов в месяц': 'smmPosts10',
+      '4 видео на смартфон': 'smmVideosSmartphone4',
+      '6 фото-постов': 'smmPhotoPosts6',
+      '3 съёмки в месяц': 'smmShooting3',
+      'Контент-планирование': 'smmContentPlanning',
+      'Репост всех постов в сторис': 'smmRepostStories',
+      'Работа с блогерами': 'smmBloggerWork',
+      'Копирайтинг': 'smmCopywriting',
+      'Аналитика и отчетность': 'smmAnalytics1',
+      'Создание визуального стиля': 'smmVisualStyle',
+    },
+    'SMM Medium': {
+      '14 постов в месяц': 'smmPosts14',
+      '1 видео на проф. камеру': 'smmVideoProfessional',
+      '4 видео на смартфон': 'smmVideosSmartphone',
+      '9 фото-постов': 'smmPhotoPosts9',
+      'Insta Stories (35 уникальных)': 'smmStories35',
+      'Контент-планирование': 'smmContentPlanning',
+      'Репост всех постов в сторис': 'smmRepostStories',
+      'Работа с блогерами': 'smmBloggerWork',
+      'Копирайтинг': 'smmCopywriting',
+      'Аналитика и отчетность 2 соц сетей': 'smmAnalytics2',
+      'Создание визуального стиля': 'smmVisualStyle',
+    },
+    'SMM Premium': {
+      '17 постов в месяц': 'smmPosts17',
+      '1 видео премиум (CGI/дрон)': 'smmVideoProfessional',
+      '4 видео на смартфон': 'smmVideosSmartphone',
+      '12 фото-постов': 'smmPhotoPosts12',
+      'Insta Stories (40 уникальных)': 'smmStories40',
+      '5 съёмок в месяц': 'smmShooting5',
+      'Контент-планирование': 'smmContentPlanning',
+      'Работа с блогерами': 'smmBloggerWork',
+      'Копирайтинг': 'smmCopywriting',
+      'Аналитика и отчетность 2 соц сетей': 'smmAnalytics2',
+      'Создание визуального стиля': 'smmVisualStyle',
+    },
+    'AI Video 5s': {
+      'AI-видео высокого качества': 'aiVideoHighQuality',
+      'До создания видео — фото-кадры на утверждение': 'aiVideoFrames',
+      'Включено до 3 правок': 'aiVideoEdits',
+      'Каждая дополнительная правка — 17 €': 'aiVideoAdditional',
+      'Срок: 1-3 рабочих дня': 'aiVideoTurnaround',
+    },
+    'AI Video 15s': {
+      'AI-видео высокого качества': 'aiVideoHighQuality',
+      'До создания видео — фото-кадры на утверждение': 'aiVideoFrames',
+      'Включено до 3 правок': 'aiVideoEdits',
+      'Каждая дополнительная правка — 17 €': 'aiVideoAdditional',
+      'Голос-за (RO/RU) +50 €': 'aiVideoVoiceover',
+      'Срок: 1-3 рабочих дня': 'aiVideoTurnaround',
+    },
+    'AI Video 25s': {
+      'AI-видео высокого качества': 'aiVideoHighQuality',
+      'До создания видео — фото-кадры на утверждение': 'aiVideoFrames',
+      'Включено до 3 правок': 'aiVideoEdits',
+      'Каждая дополнительная правка — 17 €': 'aiVideoAdditional',
+      'Голос-за (RO/RU) +50 €': 'aiVideoVoiceover',
+      'Срок: 1-3 рабочих дня': 'aiVideoTurnaround',
+    }
+  };
+
+  // Update all pricing cards
   document.querySelectorAll('.price-card').forEach(card => {
     const h3 = card.querySelector('h3');
-    const desc = card.querySelector('.price-desc');
     if (!h3) return;
 
     const cardText = h3.textContent.trim();
     
-    // Map old text to translation keys
+    // Map titles
     const titleMap = {
       'Meta Basic': 'metaBasic',
       'Meta Pro': 'metaPro',
@@ -173,19 +279,58 @@ function updatePricingCards(lang) {
       'AI Video 25s': 'aiVideo25sDesc'
     };
 
+    // Update title
     const titleKey = titleMap[cardText];
-    const descKey = descMap[cardText];
-
     if (titleKey) h3.textContent = t(titleKey, lang);
+
+    // Update description
+    const desc = card.querySelector('.price-desc');
+    const descKey = descMap[cardText];
     if (descKey && desc) desc.textContent = t(descKey, lang);
 
-    // Update button text
+    // Update button
     const btn = card.querySelector('.btn-price');
     if (btn) btn.textContent = t('choosePlan', lang);
 
-    // Update features list
-    const features = card.querySelectorAll('.price-features li');
-    // This is complex as we'd need to match English text to keys - keep original for now
+    // Update features
+    const featureMap = featureMaps[cardText];
+    if (featureMap) {
+      const features = card.querySelectorAll('.price-features li');
+      features.forEach(li => {
+        const svgElement = li.querySelector('svg');
+        const textContent = li.textContent.trim();
+        let originalText = textContent;
+        
+        // Remove checkmark/x symbols
+        originalText = originalText.replace(/✓|✕/g, '').trim();
+        
+        // Find matching translation key
+        let translationKey = null;
+        for (const [origText, key] of Object.entries(featureMap)) {
+          if (textContent.includes(origText) || originalText.includes(origText)) {
+            translationKey = key;
+            break;
+          }
+        }
+        
+        if (translationKey) {
+          const newText = t(translationKey, lang);
+          const isDisabled = li.classList.contains('disabled');
+          
+          // Rebuild li content
+          li.innerHTML = '';
+          if (svgElement) {
+            li.appendChild(svgElement.cloneNode(true));
+          }
+          li.appendChild(document.createTextNode(newText));
+          
+          // Restore disabled state
+          if (isDisabled) {
+            li.classList.add('disabled');
+          }
+        }
+      });
+    }
   });
 
   // Update period text
