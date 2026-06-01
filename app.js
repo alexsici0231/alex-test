@@ -106,7 +106,12 @@ function updateAboutSection(lang) {
   if (!about) return;
 
   about.querySelector('.section-tag').textContent = t('aboutCalvin', lang);
-  about.querySelector('.section-title').innerHTML = t('aboutTitle', lang).replace(/[^а-яА-ЯèéêëìíîïнрОА-Я\s]/g, '') + '<br /><span class="gradient-text">' + t('aboutTitle', lang).split('\n')[1] || '' + '</span>';
+  
+  // Update title - simplify by just setting first part
+  const titleElement = about.querySelector('.section-title');
+  if (titleElement) {
+    titleElement.innerHTML = '<span>' + t('aboutTitle', lang) + '</span><br /><span class="gradient-text"></span>';
+  }
 
   const process = document.querySelectorAll('.process-step');
   if (process[0]) process[0].querySelector('h4').textContent = t('auditStrategy', lang);

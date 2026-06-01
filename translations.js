@@ -30,6 +30,7 @@ const translations = {
     // Services
     ourServices: 'Наши услуги',
     servicesTitle: 'Digital-маркетинг под ключ',
+    servicesSubtitle: '',
     servicesDesc: 'Мы не просто запускаем рекламу — мы строим предсказуемые системы привлечения клиентов с измеримым ROI и прозрачной отчётностью на каждом этапе.',
     
     metaAds: 'Meta Ads',
@@ -220,6 +221,7 @@ const translations = {
     // Services
     ourServices: 'Serviciile noastre',
     servicesTitle: 'Marketing digital complet',
+    servicesSubtitle: '',
     servicesDesc: 'Nu doar lansăm publicitate — construim sisteme previzibile de atragere a clienților cu ROI măsurabil și raportare transparentă la fiecare etapă.',
     
     metaAds: 'Meta Ads',
