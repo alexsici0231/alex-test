@@ -3,7 +3,33 @@
 const TELEGRAM_BOT_TOKEN = '8733946115:AAHU7-2Hw60yD32pWJj2ThApsciWe3ufWVs';
 const TELEGRAM_CHAT_ID = '-5169580118';
 
+// Mobile fix: set hero title font-size based on viewport width
+function fixMobileHeroTitle() {
+  const heroTitle = document.querySelector('.hero-title');
+  const heroDesc = document.querySelector('.hero-desc');
+  if (!heroTitle) return;
+  
+  const width = window.innerWidth;
+  if (width <= 480) {
+    heroTitle.style.fontSize = '1.4rem';
+    heroTitle.style.lineHeight = '1.15';
+    if (heroDesc) {
+      heroDesc.style.fontSize = '0.9rem';
+    }
+  }
+  if (width <= 380) {
+    heroTitle.style.fontSize = '1.1rem';
+    heroTitle.style.lineHeight = '1.1';
+    if (heroDesc) {
+      heroDesc.style.fontSize = '0.8rem';
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  fixMobileHeroTitle();
+  window.addEventListener('resize', fixMobileHeroTitle);
+  
   initLanguage();
   initCursor();
   initNav();

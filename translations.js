@@ -451,8 +451,8 @@ const translations = {
     // Footer
     allRightsReserved: '© 2025 Calvin Dalli. Toate drepturile rezervate.',
     footerLocation: 'Agenție de Marketing Digital — Chișinău, Republica Moldova',
-    servicesFooter: 'Servicii',
     company: 'Companie',
+    servicesFooter: 'Servicii',
     contactsFooter: 'Contact',
     
     // Messages

@@ -82,6 +82,13 @@
       border-color: rgba(124, 58, 255, 0.8);
       color: #fff;
     }
+    /* Mobile responsiveness fix - CRITICAL */
+    .hero-title { max-width: 100%; word-break: break-word; }
+    @media (max-width: 500px) {
+      .hero-title { font-size: 1rem !important; line-height: 1.1 !important; }
+      .hero-desc { font-size: 0.75rem !important; }
+      .hero-content { padding: 30px 12px !important; }
+    }
   </style>
 </head>
 <body>
@@ -814,11 +821,11 @@
             <span class="logo-text">Calvin</span>
             <span class="logo-accent">Dalli</span>
           </a>
-          <p>Digital Marketing Agency<br />Кишинёв, Молдова</p>
+          <p data-i18n="heroBadge">Digital Marketing Agency — Кишинёв, Молдова</p>
         </div>
         <div class="footer-links">
           <div class="footer-col">
-            <h4>Услуги</h4>
+            <h4 data-i18n="services">Услуги</h4>
             <ul>
               <li><a href="#services">Meta Ads</a></li>
               <li><a href="#services">Google Ads</a></li>
@@ -827,16 +834,16 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Компания</h4>
+            <h4 data-i18n="company">Компания</h4>
             <ul>
-              <li><a href="#about">О нас</a></li>
-              <li><a href="#cases">Кейсы</a></li>
-              <li><a href="#pricing">Цены</a></li>
-              <li><a href="#contact">Контакты</a></li>
+              <li><a href="#about" data-i18n="about">О нас</a></li>
+              <li><a href="#cases" data-i18n="cases">Кейсы</a></li>
+              <li><a href="#pricing" data-i18n="pricing">Цены</a></li>
+              <li><a href="#contact" data-i18n="contacts">Контакты</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Контакты</h4>
+            <h4 data-i18n="contacts">Контакты</h4>
             <ul>
               <li><a href="tel:+37368356089">+373 68 356 089</a></li>
               <li><a href="https://t.me/calvindalli_support_bot" target="_blank" rel="noopener noreferrer">Telegram</a></li>
@@ -846,8 +853,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Calvin Dalli. Все права защищены.</p>
-        <p>Digital Marketing Agency — Кишинёв, Молдова</p>
+        <p data-i18n="allRightsReserved">© 2025 Calvin Dalli. Все права защищены.</p>
+        <p data-i18n="heroBadge">Digital Marketing Agency — Кишинёв, Молдова</p>
       </div>
       <div class="footer-credit">
         <a href="https://www.instagram.com/aleksandrsych/" target="_blank" rel="noopener noreferrer" data-i18n="siteCredit">Сайт сделал Сыч Александр!</a>
