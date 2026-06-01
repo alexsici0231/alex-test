@@ -42,10 +42,12 @@ const translations = {
     
     smm: 'SMM',
     smmDesc: 'Полное ведение социальных сетей: контент-стратегия, производство Reels, дизайн и комьюнити-менеджмент. Строим живое сообщество вокруг бренда, которое превращается в лояльных покупателей.',
+    smmServiceDesc: 'Полное ведение социальных сетей: контент-стратегия, производство Reels, дизайн и комьюнити-менеджмент. Строим живое сообщество вокруг бренда, которое превращается в лояльных покупателей.',
     smmFeatures: ['Контент-стратегия и сценарии', 'Производство Reels и Stories', 'Дизайн и визуальный стиль', 'Комьюнити-менеджмент'],
     
     cgi: 'AI Video Content',
     cgiDesc: 'Инновационное AI-видео с интеграцией вашего продукта в реальные сцены. Создаём видео контент, который невозможно отличить от профессионально снятого.',
+    aiVideoServiceDesc: 'Инновационное AI-видео с интеграцией вашего продукта в реальные сцены. Создаём видео контент, который невозможно отличить от профессионально снятого — ваш бренд в центре внимания.',
     cgiFeatures: ['AI-видео высокого качества', 'Интеграция продукта в сцены', 'Быстрое создание контента', 'Контент для соцсетей и рекламы'],
     
     // About
@@ -230,10 +232,12 @@ const translations = {
     
     smm: 'SMM',
     smmDesc: 'Gestionare completă a rețelelor sociale: strategie de conținut, producție Reels, design și community management. Construim o comunitate vie în jurul brandului tău.',
+    smmServiceDesc: 'Gestionare completă a rețelelor sociale: strategie de conținut, producție Reels, design și community management. Construim o comunitate vie în jurul brandului tău, care se transformă în cumpărători loiali.',
     smmFeatures: ['Strategie de conținut și scenarii', 'Producție Reels și Stories', 'Design și stil vizual', 'Community management'],
     
     cgi: 'AI Video Content',
     cgiDesc: 'Videoclipuri AI inovatoare cu integrarea produsului tău în scene reale. Creăm conținut video care nu poate fi distins de cel înregistrat profesional — brandul tău în centrul atenției.',
+    aiVideoServiceDesc: 'Videoclipuri AI inovatoare cu integrarea produsului tău în scene reale. Creăm conținut video care nu poate fi distins de cel înregistrat profesional — brandul tău în centrul atenției.',
     cgiFeatures: ['Videoclipuri AI de înaltă calitate', 'Integrarea produsului în scene', 'Creare rapidă de conținut', 'Conținut pentru rețele sociale și publicitate'],
     
     // About

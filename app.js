@@ -83,8 +83,8 @@ function updateServiceCards(lang) {
   const services = [
     { index: 0, title: 'metaAds', desc: 'metaAdsDesc', features: 'metaFeatures' },
     { index: 1, title: 'googleAds', desc: 'googleAdsDesc', features: 'googleFeatures' },
-    { index: 2, title: 'smm', desc: 'smmDesc', features: 'smmFeatures' },
-    { index: 3, title: 'cgi', desc: 'cgiDesc', features: 'cgiFeatures' }
+    { index: 2, title: 'smm', desc: 'smmServiceDesc', features: 'smmFeatures' },
+    { index: 3, title: 'cgi', desc: 'aiVideoServiceDesc', features: 'cgiFeatures' }
   ];
 
   services.forEach(service => {
